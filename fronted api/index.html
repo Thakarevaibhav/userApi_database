@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <div class="container_fluid">
+
+        <div class="navbar1">
+            <div class="logo">
+                <h1>MyData</h1>
+            </div>
+            <div class="search">
+                <input type="text" placeholder="Enter id" id="searchid">
+                <i class="fa-solid fa-magnifying-glass" id="searchbutton"></i> 
+            </div>
+            <div class="action">
+                <button onclick="openclosemodal('modal')">Add New User</button>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div class="container_fluid">
+        <div class="container card-container" id="user">
+            <!-- <div class="cards">
+                <div class="card1">
+                    <i class="fa-solid fa-user iconuser"></i>
+<div class="iddata">
+                    <h3>id:</h3>
+                    <h3>1</h3>
+                </div>
+                <div class="namedata">
+                    <h3>Firstname:</h3>
+                    <h3>xyz</h3>
+                </div>
+                <div class="agedata">
+                    <h3>Age:</h3>
+                    <h3>34</h3>
+                </div>
+                <div class="phonedata">
+                    <h3>Phone:</h3>
+                    <h3>1234567</h3>
+                </div>
+                    <button>update data</button>
+                    <button>delete data</button>
+                </div> -->
+        </div>
+    </div>
+
+
+
+
+    <div class="toastmsg" id="toastmsg">
+
+    </div>
+
+
+
+
+
+
+    <!-- modal for add user -->
+
+    <div class="modal" id="modal" >
+        <div class="modalform">
+            <i class="fa-solid fa-circle-xmark closeicon" onclick="openclosemodal('modal')"></i>
+            <h2>Add new user</h2>
+
+            <div class="form" id="myform">
+                <input type="text"  placeholder="Enter user Id" onkeyup="readValue('id',Number(this.value))">
+                <input type="text"  placeholder="Enter user firstname" onkeyup="readValue('firstName',this.value)">
+                <input type="text"  placeholder="Enter user age " onkeyup="readValue('age',Number(this.value))">
+                <input type="text"  placeholder="Enter user phone" onkeyup="readValue('phone',Number(this.value))">
+                <button class="addbutton" onclick="adduser(),openclosemodal('modal')" >Add User</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- modal for user update -->
+
+    <div class="modal" id="updatemodal" >
+        <div class="modalform">
+            <i class="fa-solid fa-circle-xmark closeicon" onclick="openclosemodal('updatemodal')"></i>
+            <h2>Update your user info</h2>
+
+            <div class="form">
+                <input type="text" id="userid" placeholder="Enter user Id" readonly >
+                <input type="text" id="firstname" placeholder="Enter user firstname" >
+                <input type="text" id="age" placeholder="Enter user age " >
+                <input type="text" id="phone" placeholder="Enter user phone" >
+                <button class="upbutton" onclick="updateuser(),openclosemodal('updatemodal')" >update User</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
